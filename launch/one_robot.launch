@@ -1,0 +1,23 @@
+<launch>
+    <arg name="robot_name"/>
+    <arg name="init_pose"/>
+
+    <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
+    <!-- <arg name="x_pos" default="5.0"/>
+    <arg name="y_pos" default="4.0"/>
+    <arg name="z_pos" default="0.0"/> -->
+
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find pokemon_searching)/urdf/turtlebot3_$(arg model).urdf.xacro'" />
+
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf"  args="-urdf -model $(arg robot_name) -Y 3.14 $(arg init_pose)  -param robot_description" />
+
+    <!-- <node name="spawn_minibot_model" pkg="gazebo_ros" type="spawn_model"
+     args="$(arg init_pose) -urdf -param /robot_description -model $(arg robot_name)"
+     respawn="false" output="screen" /> -->
+
+    <!-- <node pkg="robot_state_publisher" type="state_publisher" 
+          name="robot_state_publisher" output="screen"/> -->
+
+    <!-- The odometry estimator, throttling, fake laser etc. go here -->
+    <!-- All the stuff as from usual robot launch file -->
+</launch>
