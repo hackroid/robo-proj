@@ -82,16 +82,17 @@ def move_to(pose, robot_name):
 if __name__ == "__main__":
     rospy.init_node('move_goal', anonymous=True)
     goals_file = rospy.get_param('~goals_file')
-    robot_name = rospy.get_param('robot_name','tb3_0')
-    wait_time = rospy.get_param('wait_time','0')
+    robot_name = rospy.get_param('~robot_name','tb3_0')
+    wait_time = rospy.get_param('~wait_time','0')
     dt = read_data(goals_file)
     time.sleep(float(wait_time))
     for goal in dt:
         move_to(goal,robot_name)
         # Capture
-        uuid = roslaunch.rlutil.get_or_generate_uuid(None, False)
-        roslaunch.configure_logging(uuid)
-        search_launch = roslaunch.parent.ROSLaunchParent(uuid, ["/home/robot2019/catkin_ws/src/robo_proj/pokemon_go/launch/pokemon.launch"])
-        search_launch.start()
-        time.sleep(10)
+        # uuid = roslaunch.rlutil.get_or_generate_uuid(None, False)
+        # roslaunch.configure_logging(uuid)
+        # search_launch = roslaunch.parent.ROSLaunchParent(uuid, ["/home/robot2019/catkin_ws/src/robo_proj/pokemon_go/launch/pokemon.launch"])
+        # search_launch.start()
+        sp.check_output("rosrun pokemon_go pokemon_searching _search_num:=\"{}\"".format(robot_name), shell=True)
+        time.sleep(5)
         

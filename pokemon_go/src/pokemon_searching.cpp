@@ -361,7 +361,12 @@ public:
 int main(int argc, char** argv)
 {
 	ros::init(argc, argv, "pokemon_searching");
-  ros::param::get("~search_num",search_num);
+  // ros::param::get("~search_num",search_num);
+  ros::NodeHandle nh("~");
+  // std::string check;
+  
+  nh.getParam("search_num", search_num);
+  cout << search_num << endl;
 	ImageConverter ic;
 	ros::spin();
 	return 0;

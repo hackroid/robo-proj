@@ -28,6 +28,22 @@
     <arg name="y" value="5.0" />
     <arg name="a" value="3.14" />
   </include>
+    <include file="$(find robo_navi)/launch/robo_navi.launch">
+	  <arg name="model" value="$(arg model)" />
+	  <arg name="map_file" default="$(arg map_file)" />
+    <arg name="robot_name" value="tb3_3" />
+    <arg name="x" value="4.4" />
+    <arg name="y" value="5.5" />
+    <arg name="a" value="3.14" />
+  </include>
+    <include file="$(find robo_navi)/launch/robo_navi.launch">
+	  <arg name="model" value="$(arg model)" />
+	  <arg name="map_file" default="$(arg map_file)" />
+    <arg name="robot_name" value="tb3_4" />
+    <arg name="x" value="5.0" />
+    <arg name="y" value="4.0" />
+    <arg name="a" value="3.14" />
+  </include>
   <!-- <include file="$(find robo_navi)/launch/multi_0_robo_navi.launch">
 	  <arg name="model" value="$(arg model)" />
 	  <arg name="map_file" default="$(arg map_file)" />

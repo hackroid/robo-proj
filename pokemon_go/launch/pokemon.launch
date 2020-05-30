@@ -1,6 +1,6 @@
 <launch>
     <arg name="robot_name" default="tb3_0"/>
-    <node name="pokemon_search_1" pkg="pokemon_go" type="pokemon_searching">
+    <node name="pokemon_search_2" pkg="pokemon_go" type="pokemon_searching">
         <param name="search_num" type="string" value="$(arg robot_name)" />
     </node>
 </launch>
