@@ -338,7 +338,7 @@
           <enable_wind>0</enable_wind>
           <kinematic>0</kinematic>
         </link>
-        <pose frame=''>-3.76034 -0.855407 0.389053 0 -0 0</pose>
+        <pose frame=''>-3.76034 -0.855407 0.350000 0 -0 0</pose>
       </model>
       <model name='Pokemon06_0'>
         <static>1</static>
@@ -2534,10 +2534,10 @@
           </link>
         </model>
         <model name='Pokemon06'>
-          <pose frame=''>-3.84418 -1.5646 0.389053 0 -0 0</pose>
+          <pose frame=''>-3.84418 -1.5646 0.350000 0 -0 0</pose>
           <scale>1 1 1</scale>
           <link name='link'>
-            <pose frame=''>-3.84418 -1.5646 0.389053 0 -0 0</pose>
+            <pose frame=''>-3.84418 -1.5646 0.350000 0 -0 0</pose>
             <velocity>0 0 0 0 -0 0</velocity>
             <acceleration>0 0 0 0 -0 0</acceleration>
             <wrench>0 0 0 0 -0 0</wrench>

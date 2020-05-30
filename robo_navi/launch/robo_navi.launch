@@ -4,7 +4,7 @@
   <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
   <arg name="map_file" default="$(find robo_navi)/maps/maze.yaml"/>
   <arg name="open_rviz" default="false"/>
-  <arg name="move_forward_only" default="false"/>
+  <arg name="move_forward_only" default="true"/>
   <arg name="robot_name"/>
   <arg name="x"/>
   <arg name="y"/>

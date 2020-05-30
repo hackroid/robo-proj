@@ -94,5 +94,5 @@ if __name__ == "__main__":
         # search_launch = roslaunch.parent.ROSLaunchParent(uuid, ["/home/robot2019/catkin_ws/src/robo_proj/pokemon_go/launch/pokemon.launch"])
         # search_launch.start()
         sp.check_output("rosrun pokemon_go pokemon_searching _search_num:=\"{}\"".format(robot_name), shell=True)
-        time.sleep(5)
+        time.sleep(3)
         
