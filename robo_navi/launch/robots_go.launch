@@ -13,25 +13,25 @@
     <node pkg="robo_navi" type="move_goal.py" name = "move_goal_1">
         <param name="goals_file" value="$(arg goals_folder)/1.csv"/>
         <param name="robot_name" value="tb3_1"/>
-        <param name="wait_time" value="5"/>
+        <param name="wait_time" value="8"/>
     </node>
 
     <node pkg="robo_navi" type="move_goal.py" name = "move_goal_2">
         <param name="goals_file" value="$(arg goals_folder)/2.csv"/>
         <param name="robot_name" value="tb3_2"/>
-        <param name="wait_time" value="10"/>
+        <param name="wait_time" value="16"/>
     </node>
 
     <node pkg="robo_navi" type="move_goal.py" name = "move_goal_3">
         <param name="goals_file" value="$(arg goals_folder)/3.csv"/>
         <param name="robot_name" value="tb3_3"/>
-        <param name="wait_time" value="15"/>
+        <param name="wait_time" value="24"/>
     </node>
 
     <node pkg="robo_navi" type="move_goal.py" name = "move_goal_4">
         <param name="goals_file" value="$(arg goals_folder)/4.csv"/>
         <param name="robot_name" value="tb3_4"/>
-        <param name="wait_time" value="20"/>
+        <param name="wait_time" value="32"/>
     </node>
 
 

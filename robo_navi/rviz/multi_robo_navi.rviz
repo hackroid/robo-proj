@@ -21,6 +21,7 @@ Panels:
         - /Local Map_21/Polygon1
         - /Local Map_21/Costmap1
         - /Local Map_21/Planner1
+        - /Planner Plan_32
       Splitter Ratio: 0.5
     Tree Height: 295
   - Class: rviz/Selection
@@ -127,6 +128,54 @@ Visualization Manager:
           Value: true
         tb3_2/wheel_right_link:
           Value: true
+        tb3_3/base_footprint:
+          Value: true
+        tb3_3/base_link:
+          Value: true
+        tb3_3/base_scan:
+          Value: true
+        tb3_3/camera_link:
+          Value: true
+        tb3_3/camera_rgb_frame:
+          Value: true
+        tb3_3/camera_rgb_optical_frame:
+          Value: true
+        tb3_3/caster_back_left_link:
+          Value: true
+        tb3_3/caster_back_right_link:
+          Value: true
+        tb3_3/imu_link:
+          Value: true
+        tb3_3/odom:
+          Value: true
+        tb3_3/wheel_left_link:
+          Value: true
+        tb3_3/wheel_right_link:
+          Value: true
+        tb3_4/base_footprint:
+          Value: true
+        tb3_4/base_link:
+          Value: true
+        tb3_4/base_scan:
+          Value: true
+        tb3_4/camera_link:
+          Value: true
+        tb3_4/camera_rgb_frame:
+          Value: true
+        tb3_4/camera_rgb_optical_frame:
+          Value: true
+        tb3_4/caster_back_left_link:
+          Value: true
+        tb3_4/caster_back_right_link:
+          Value: true
+        tb3_4/imu_link:
+          Value: true
+        tb3_4/odom:
+          Value: true
+        tb3_4/wheel_left_link:
+          Value: true
+        tb3_4/wheel_right_link:
+          Value: true
       Marker Scale: 1
       Name: TF
       Show Arrows: true
@@ -190,6 +239,44 @@ Visualization Manager:
                 tb3_2/wheel_left_link:
                   {}
                 tb3_2/wheel_right_link:
+                  {}
+          tb3_3/odom:
+            tb3_3/base_footprint:
+              tb3_3/base_link:
+                tb3_3/base_scan:
+                  {}
+                tb3_3/camera_link:
+                  tb3_3/camera_rgb_frame:
+                    tb3_3/camera_rgb_optical_frame:
+                      {}
+                tb3_3/caster_back_left_link:
+                  {}
+                tb3_3/caster_back_right_link:
+                  {}
+                tb3_3/imu_link:
+                  {}
+                tb3_3/wheel_left_link:
+                  {}
+                tb3_3/wheel_right_link:
+                  {}
+          tb3_4/odom:
+            tb3_4/base_footprint:
+              tb3_4/base_link:
+                tb3_4/base_scan:
+                  {}
+                tb3_4/camera_link:
+                  tb3_4/camera_rgb_frame:
+                    tb3_4/camera_rgb_optical_frame:
+                      {}
+                tb3_4/caster_back_left_link:
+                  {}
+                tb3_4/caster_back_right_link:
+                  {}
+                tb3_4/imu_link:
+                  {}
+                tb3_4/wheel_left_link:
+                  {}
+                tb3_4/wheel_right_link:
                   {}
       Update Interval: 0
       Value: true
@@ -758,6 +845,287 @@ Visualization Manager:
       Topic: /tb3_2/move_base/NavfnROS/plan
       Unreliable: true
       Value: true
+    - Class: rviz/Group
+      Displays:
+        - Alpha: 0.699999988079071
+          Class: rviz/Map
+          Color Scheme: costmap
+          Draw Behind: true
+          Enabled: true
+          Name: Costmap
+          Topic: /tb3_3/move_base/global_costmap/costmap
+          Unreliable: false
+          Use Timestamp: false
+          Value: true
+        - Alpha: 1
+          Buffer Length: 1
+          Class: rviz/Path
+          Color: 255; 0; 0
+          Enabled: true
+          Head Diameter: 0.30000001192092896
+          Head Length: 0.20000000298023224
+          Length: 0.30000001192092896
+          Line Style: Lines
+          Line Width: 0.029999999329447746
+          Name: Planner
+          Offset:
+            X: 0
+            Y: 0
+            Z: 0
+          Pose Color: 255; 85; 255
+          Pose Style: None
+          Radius: 0.029999999329447746
+          Shaft Diameter: 0.10000000149011612
+          Shaft Length: 0.10000000149011612
+          Topic: /tb3_2/move_base/NavfnROS/plan
+          Unreliable: false
+          Value: true
+      Enabled: true
+      Name: Global Map_3
+    - Class: rviz/Group
+      Displays:
+        - Alpha: 1
+          Class: rviz/Polygon
+          Color: 0; 0; 0
+          Enabled: true
+          Name: Polygon
+          Topic: /tb3_2/move_base/local_costmap/footprint
+          Unreliable: false
+          Value: true
+        - Alpha: 1
+          Class: rviz/Map
+          Color Scheme: costmap
+          Draw Behind: false
+          Enabled: true
+          Name: Costmap
+          Topic: /tb3_3/move_base/local_costmap/costmap
+          Unreliable: false
+          Use Timestamp: false
+          Value: true
+        - Alpha: 1
+          Buffer Length: 10
+          Class: rviz/Path
+          Color: 255; 255; 0
+          Enabled: true
+          Head Diameter: 0.30000001192092896
+          Head Length: 0.20000000298023224
+          Length: 0.30000001192092896
+          Line Style: Lines
+          Line Width: 0.029999999329447746
+          Name: Planner
+          Offset:
+            X: 0
+            Y: 0
+            Z: 0
+          Pose Color: 255; 85; 255
+          Pose Style: None
+          Radius: 0.029999999329447746
+          Shaft Diameter: 0.10000000149011612
+          Shaft Length: 0.10000000149011612
+          Topic: /tb3_2/move_base/NavfnROS/plan
+          Unreliable: false
+          Value: true
+      Enabled: true
+      Name: Local Map_3
+    - Alpha: 1
+      Arrow Length: 0.05000000074505806
+      Axes Length: 0.30000001192092896
+      Axes Radius: 0.009999999776482582
+      Class: rviz/PoseArray
+      Color: 0; 192; 0
+      Enabled: true
+      Head Length: 0.07000000029802322
+      Head Radius: 0.029999999329447746
+      Name: Amcl Particles_3
+      Shaft Length: 0.23000000417232513
+      Shaft Radius: 0.009999999776482582
+      Shape: Arrow (Flat)
+      Topic: /tb3_3/particlecloud
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Axes Length: 1
+      Axes Radius: 0.10000000149011612
+      Class: rviz/Pose
+      Color: 25; 255; 0
+      Enabled: true
+      Head Length: 0.30000001192092896
+      Head Radius: 0.699999988079071
+      Name: Goal_3
+      Shaft Length: 0.699999988079071
+      Shaft Radius: 0.20000000298023224
+      Shape: Arrow
+      Topic: /tb3_3/move_base/current_goal
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Buffer Length: 1
+      Class: rviz/Path
+      Color: 239; 41; 41
+      Enabled: true
+      Head Diameter: 0.30000001192092896
+      Head Length: 0.20000000298023224
+      Length: 0.30000001192092896
+      Line Style: Billboards
+      Line Width: 0.10000000149011612
+      Name: Path_3
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Pose Color: 255; 85; 255
+      Pose Style: None
+      Radius: 0.029999999329447746
+      Shaft Diameter: 0.10000000149011612
+      Shaft Length: 0.10000000149011612
+      Topic: /tb3_3/move_base/DWAPlannerROS/global_plan
+      Unreliable: false
+      Value: true
+    - Alpha: 0.5
+      Buffer Length: 1
+      Class: rviz/Path
+      Color: 138; 226; 52
+      Enabled: true
+      Head Diameter: 0.30000001192092896
+      Head Length: 0.20000000298023224
+      Length: 0.30000001192092896
+      Line Style: Billboards
+      Line Width: 0.10000000149011612
+      Name: Planner Plan_3
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Pose Color: 255; 85; 255
+      Pose Style: None
+      Radius: 0.029999999329447746
+      Shaft Diameter: 0.10000000149011612
+      Shaft Length: 0.10000000149011612
+      Topic: /tb3_3/move_base/NavfnROS/plan
+      Unreliable: true
+      Value: true
+    - Class: rviz/Group
+      Displays:
+        - Alpha: 1
+          Class: rviz/Polygon
+          Color: 0; 0; 0
+          Enabled: true
+          Name: Polygon
+          Topic: /tb3_4/move_base/global_costmap/footprint
+          Unreliable: false
+          Value: true
+        - Alpha: 1
+          Class: rviz/Map
+          Color Scheme: costmap
+          Draw Behind: false
+          Enabled: true
+          Name: Costmap
+          Topic: /tb3_4/move_base/local_costmap/costmap
+          Unreliable: false
+          Use Timestamp: false
+          Value: true
+        - Alpha: 1
+          Buffer Length: 10
+          Class: rviz/Path
+          Color: 255; 255; 0
+          Enabled: true
+          Head Diameter: 0.30000001192092896
+          Head Length: 0.20000000298023224
+          Length: 0.30000001192092896
+          Line Style: Lines
+          Line Width: 0.029999999329447746
+          Name: Planner
+          Offset:
+            X: 0
+            Y: 0
+            Z: 0
+          Pose Color: 255; 85; 255
+          Pose Style: None
+          Radius: 0.029999999329447746
+          Shaft Diameter: 0.10000000149011612
+          Shaft Length: 0.10000000149011612
+          Topic: /tb3_4/move_base/NavfnROS/plan
+          Unreliable: false
+          Value: true
+      Enabled: true
+      Name: Local Map_4
+    - Alpha: 1
+      Arrow Length: 0.05000000074505806
+      Axes Length: 0.30000001192092896
+      Axes Radius: 0.009999999776482582
+      Class: rviz/PoseArray
+      Color: 0; 192; 0
+      Enabled: true
+      Head Length: 0.07000000029802322
+      Head Radius: 0.029999999329447746
+      Name: Amcl Particles_3
+      Shaft Length: 0.23000000417232513
+      Shaft Radius: 0.009999999776482582
+      Shape: Arrow (Flat)
+      Topic: /tb3_4/particlecloud
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Axes Length: 1
+      Axes Radius: 0.10000000149011612
+      Class: rviz/Pose
+      Color: 25; 255; 0
+      Enabled: true
+      Head Length: 0.30000001192092896
+      Head Radius: 0.699999988079071
+      Name: Goal_3
+      Shaft Length: 0.699999988079071
+      Shaft Radius: 0.20000000298023224
+      Shape: Arrow
+      Topic: /tb3_4/move_base/current_goal
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Buffer Length: 1
+      Class: rviz/Path
+      Color: 239; 41; 41
+      Enabled: true
+      Head Diameter: 0.30000001192092896
+      Head Length: 0.20000000298023224
+      Length: 0.30000001192092896
+      Line Style: Billboards
+      Line Width: 0.10000000149011612
+      Name: Path_3
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Pose Color: 255; 85; 255
+      Pose Style: None
+      Radius: 0.029999999329447746
+      Shaft Diameter: 0.10000000149011612
+      Shaft Length: 0.10000000149011612
+      Topic: /tb3_4/move_base/DWAPlannerROS/global_plan
+      Unreliable: false
+      Value: true
+    - Alpha: 0.5
+      Buffer Length: 1
+      Class: rviz/Path
+      Color: 138; 226; 52
+      Enabled: true
+      Head Diameter: 0.30000001192092896
+      Head Length: 0.20000000298023224
+      Length: 0.30000001192092896
+      Line Style: Billboards
+      Line Width: 0.10000000149011612
+      Name: Planner Plan_3
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Pose Color: 255; 85; 255
+      Pose Style: None
+      Radius: 0.029999999329447746
+      Shaft Diameter: 0.10000000149011612
+      Shaft Length: 0.10000000149011612
+      Topic: /tb3_4/move_base/NavfnROS/plan
+      Unreliable: true
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -827,5 +1195,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 1366
-  X: 0
+  X: 67
   Y: 27
