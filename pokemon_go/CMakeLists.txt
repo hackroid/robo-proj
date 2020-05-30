@@ -212,5 +212,5 @@ include_directories(
 
 add_executable(pokemon_searching src/pokemon_searching.cpp)
 target_link_libraries(pokemon_searching ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
-add_executable(pokemon_catching src/pokemon_catching.cpp)
-target_link_libraries(pokemon_catching ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+# add_executable(pokemon_catching src/pokemon_catching.cpp)
+# target_link_libraries(pokemon_catching ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Arguments -->
+    <arg name="model" default="waffle_pi"/>
+    <arg name="goals_folder" default="$(find robo_navi)/maps"/>
+
+    <node pkg="robo_navi" type="move_goal.py" name = "move_goal_0">
+        <param name="goals_file" value="$(arg goals_folder)/0.csv"/>
+        <param name="robot_name" value="tb3_3"/>
+    </node>
+
+
+
+    <!-- rviz -->
+    <!-- <node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(find robo_navi)/rviz/multi_robo_navi.rviz"/> -->
+</launch>

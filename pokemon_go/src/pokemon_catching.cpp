@@ -40,7 +40,7 @@ public:
   }
 
   ~PokemonCatching()
-  {rosrun pokemon_go pokemon_catching 
+  {
     // cv::destroyWindow(OPENCV_WINDOW);
   }
 
@@ -67,7 +67,7 @@ public:
     Scalar color = Scalar(0,255,0);
     Scalar outColor = Scalar(0,0,255);
     cv::Mat closed;
-    Rect rect;rosrun pokemon_go pokemon_catching 
+    Rect rect;
     Rect rect1;
 
     frame = cv_ptr->image;
@@ -75,17 +75,25 @@ public:
     Mat roi = frame(roiRect);
     Mat image;
     Mat image2;
-    Mat image3;rosrun pokemon_go pokemon_catching 
+    Mat image3;
+    if(DEBUG){
+		  image = roi.clone();
+		  image2 = roi.clone();
+		  image3 = roi.clone();
+    }
 
     cvtColor(roi, src_gray, COLOR_BGR2GRAY);  //颜色转换
-
+// imshow("roi", roi);
+//  waitKey();
     Canny(src_gray, threshold_output, 85, 140, (3, 3));   //使用Canny检测边缘
     cv::morphologyEx(threshold_output, closed, cv::MORPH_CLOSE, element5);  //形态学闭运算函数  
 
     if(DEBUG){
-      imshow("canny", threshold_output);
-      // waitKey();
-      imshow("erode", closed);
+      imshow("roi", roi);
+
+    //   imshow("canny", threshold_output);
+       waitKey();
+    //   imshow("erode", closed);
       // waitKey(3);
     }
     findContours(closed, contours, hierarchy, RETR_EXTERNAL, CHAIN_APPROX_NONE, Point());
@@ -110,7 +118,11 @@ public:
       // show tect in 0th
       rect1 = boundingRect(contours[0]);
       rectangle(image2,rect1,color, 2);
-      imshow("rectin1", image2);
+      imshow("pokemonRect", image2);
+
+	
+      rectangle(image3,rect,color, 2);
+      imshow("outerRect", image3);
       
       waitKey();
 
@@ -143,6 +155,14 @@ public:
         }
         vel_pub_.publish(speed); 
         ros::Duration(0.1).sleep();
+
+		// show img
+		findContours(closed, pokemon_contours, hierarchy,  RETR_TREE, CHAIN_APPROX_NONE, Point());
+        rect1 = boundingRect(pokemon_contours[0]);
+		rectangle(roi,rect1,color, 2);
+		rectangle(roi,rect, outColor, 2);
+		imshow( "Pokemon Search", roi);
+		cv::waitKey(3);
       }
       // // left width more then 5
       // else if(rect.tl().x>5){
@@ -173,7 +193,9 @@ public:
           ros::Duration(0.1).sleep(); 
         }
         if((rect.tl().y>5) && ((roi_height-rect.br().y)>5) && ((roi_width-rect.br().x)>10)){
-          ROS_INFO("GO LEFT");ect1_tl_x = rect1.tl().x + diff;
+          ROS_INFO("GO LEFT");
+          geometry_msgs::Twist speed;
+          speed.linear.x=0.1;
           speed.angular.z=0.2;
           vel_pub_.publish(speed); 
           ros::Duration(0.1).sleep(); 
@@ -198,12 +220,7 @@ public:
         int rect1_tl_y;
         int rect1_br_x;
         int rect1_br_y;
-        int diff = 10;
-	// rect1_tl_x = rect1.tl().x + diff;
-        // rect1_tl_y = rect1.tl().y + diff;
-	// rect1_br_x = rect1.br().x - diff;
-	// rect1_br_y = rect1.br().y - diff;
-
+        int diff = 6;
         if((abs(rect1.tl().x-rect.tl().x)<=2)){
           rect1_tl_x = rect1.tl().x + diff;
         }else{
@@ -274,12 +291,12 @@ public:
     if(flag==1){
       int height = cv_ptr->image.rows;
       int width = cv_ptr->image.cols;
-      roi_tl_x = width/3;
-      roi_tl_y = height/16;
-      roi_br_x = 2*width/3;
-      roi_br_y = 5*height/8;
-      roi_height = roi_br_y-roi_tl_y;
-      roi_width = roi_br_x-roi_tl_x;
+			roi_tl_x	= width / 5;
+			roi_tl_y	= height / 20;
+			roi_br_x	= 4 * width / 5;
+			roi_br_y	= 18 * height / 20;
+			roi_height	= roi_br_y - roi_tl_y;
+			roi_width	= roi_br_x - roi_tl_x;
       flag = 5;
 
     }
