@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+
+    <include file="$(find robo_spawn)/launch/sim.launch" />
+    <include file="$(find robo_navi)/launch/multi_nav_bringup.launch" />
+
+</launch>

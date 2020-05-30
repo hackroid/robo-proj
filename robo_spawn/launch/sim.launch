@@ -7,7 +7,7 @@
     <arg name="gui" default="false"/>
   <!-- start world -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
-        <arg name="world_name" value="$(find pokemon_searching)/worlds/pokemon.world"/>
+        <arg name="world_name" value="$(find robo_spawn)/worlds/pokemon.world"/>
         <arg name="paused" value="false"/>
         <arg name="use_sim_time" value="true"/>
         <arg name="gui" value="$(arg gui)"/>
@@ -16,5 +16,5 @@
     </include>
 
   <!-- include our robots -->
-  <include file="$(find robo_proj)/launch/robots.launch"/>
+  <include file="$(find robo_spawn)/launch/robots.launch"/>
 </launch>
