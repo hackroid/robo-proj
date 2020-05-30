@@ -5,8 +5,8 @@
     <arg name="goals_folder" default="$(find robo_navi)/maps"/>
 
     <node pkg="robo_navi" type="move_goal.py" name = "move_goal_0">
-        <param name="goals_file" value="$(arg goals_folder)/0.csv"/>
-        <param name="robot_name" value="tb3_3"/>
+        <param name="goals_file" value="$(arg goals_folder)/4.csv"/>
+        <param name="robot_name" value="tb3_0"/>
     </node>
 
 

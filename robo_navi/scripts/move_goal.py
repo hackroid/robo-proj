@@ -4,7 +4,8 @@ import csv
 import roslib;
 import rospy
 import actionlib
-import time
+import roslaunch
+import time,subprocess as sp
 from tf.transformations import quaternion_from_euler
 from actionlib_msgs.msg import *
 from geometry_msgs.msg import Pose, PoseWithCovarianceStamped, Point, Quaternion, Twist
@@ -87,3 +88,10 @@ if __name__ == "__main__":
     time.sleep(float(wait_time))
     for goal in dt:
         move_to(goal,robot_name)
+        # Capture
+        uuid = roslaunch.rlutil.get_or_generate_uuid(None, False)
+        roslaunch.configure_logging(uuid)
+        search_launch = roslaunch.parent.ROSLaunchParent(uuid, ["/home/robot2019/catkin_ws/src/robo_proj/pokemon_go/launch/pokemon.launch"])
+        search_launch.start()
+        time.sleep(10)
+        

@@ -1,7 +1,0 @@
-<launch>
-    <node name="pokemon_search_1" pkg="pokemon_go" type="pokemon_searching"  >
-        <param name="search_num" type="string" value="search_1" />
-    </node>
-        
-</launch>
-

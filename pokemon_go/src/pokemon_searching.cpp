@@ -14,7 +14,7 @@ using namespace cv;
 static const bool DEBUG = false;
 static const bool MOVE = true;
 static const bool showBorder = true;
-static const string search_num;
+static string search_num;
 
 static const std::string OPENCV_WINDOW = "Pokemon Search";
 
@@ -361,7 +361,7 @@ public:
 int main(int argc, char** argv)
 {
 	ros::init(argc, argv, "pokemon_searching");
-    ros::param::get("~search_num",search_num)
+  ros::param::get("~search_num",search_num);
 	ImageConverter ic;
 	ros::spin();
 	return 0;
